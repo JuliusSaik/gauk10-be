@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: 'flashcards-db'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+    ports:
+      - "3306:3306"
+    volumes:
+      - flashcards-db:/var/lib/mysql
+volumes:
+  flashcards-db:
